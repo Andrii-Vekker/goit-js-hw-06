@@ -18,7 +18,7 @@ function categories(value) {
     
 const findItem = value.forEach(element =>
      console.log(
-    `Категория: ${element.querySelector('h2').textContent};
+    `Категория: ${element.querySelector('h2').textContent(i)};
      Количество элементов: ${element.querySelectorAll('li').length}`,
   ),
 );
