@@ -17,33 +17,30 @@
 // именем свойства, а значение поля - значением свойства.Для доступа к элементам формы используй свойство elements.
 // Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset.
 
-// const ref = {
-//     form: document.querySelector(".login-form")
-// }
-// ref.form.addEventListener("submit", onFormSubmit);
-
-// function onFormSubmit(evt) {
-//     evt.preventDefault();
-//     const email = evt.target.elements.email.value;
-//     const password = evt.target.elements.password.value;
-//     console.log(email === "" || password === "" ? alert("Заполните все поля!") : { email, password });
-//     ref.form.reset()
-// }
-
-
-
-
-const form = document.querySelector('.login-form');
-form.addEventListener("submit", sendTheForm);
-function sendTheForm(event) {
-    event.preventDefault();
-  
-    const { email, password } = event.currentTarget;
-    if (email.value === "" || password.value === "") {
-        return alert("Please fill in all the fields!")
-    } else (
-        console.log({ email: `${email.value}`, password: `${password.value}` })
-    )
-    
-    event.currentTarget.reset();
+const ref = {
+    form: document.querySelector(".login-form")
 }
+ref.form.addEventListener("submit", onFormSubmit);
+function onFormSubmit(evt) {
+    evt.preventDefault();
+    const email = evt.target.email.value;
+    const password = evt.target.password.value;
+    console.log(email === "" || password === "" ? alert("Заполните все поля!") : { email, password });
+    ref.form.reset()
+}
+
+
+
+
+// const form = document.querySelector('.login-form');
+// form.addEventListener("submit", sendTheForm);
+// function sendTheForm(event) {
+//     event.preventDefault();
+ //     const { email, password } = event.currentTarget;
+//     if (email.value === "" || password.value === "") {
+//         return alert("Please fill in all the fields!")
+//     } else (
+//         console.log({ email: `${email.value}`, password: `${password.value}` })
+//     )
+   //     event.currentTarget.reset();
+// }
