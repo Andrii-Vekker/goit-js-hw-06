@@ -21,8 +21,8 @@ console.log(ref.bodyColor)
 
 ref.changeColorBtn.addEventListener("click", changeColor)
 
-function changeColor(evt) {
+function changeColor() {
   ref.bodyColor.style.backgroundColor = getRandomHexColor();
-  
+  ref.spanText.textContent = getRandomHexColor()
 
 }
