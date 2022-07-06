@@ -32,19 +32,20 @@ const ref = {
 }
 ref.btnCreate.addEventListener("click", (e) => createBoxes(+ref.input.value));
 ref.btnDestroy.addEventListener("click", destroyBoxes);
-
+ref.input.addEventListener("input", (e) => {e.target.value})
 function createBoxes(amount) {
   for (let i = 0; i < amount; i += 1) {
     const item = document.createElement("div");
-     
-    item.style.background = getRandomHexColor()
+    item.classList.add("box-item")
+    item.style.background = getRandomHexColor();
     item.style.width =  `${30 + i * 10}px`;
     item.style.height =  `${30 + i * 10}px`;
-
     ref.divParent.append(item);
   }
  };
 
 function destroyBoxes() {
-  ref.divParent.innerHTML = ""
+  ref.divParent.innerHTML = "";
+  ref.input.value = ""
+
 }
