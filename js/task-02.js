@@ -13,42 +13,19 @@ const ingredients = [
   'Condiments',
 ];
 
+const list = document.querySelector("#ingredients");
 function createLIst(v) {
-  const list = document.querySelector("#ingredients")
-  v.map((i) => {
+  return v.map((i) => {
     const item = document.createElement("li");
     item.textContent = `${i}`;
-    item.classList.add("item");
-    list.append(item)
+   item.classList.add("item");
+    return item;
   })
-return list
 }
-
-console.log(createLIst(ingredients))
-
-
-// const list = document.querySelector("#ingredients")
-// function createLIst(v) {
-//   return v.map((i) => {
-//     const item = document.createElement("li");
-//     item.textContent = `${i}`;
-//     item.classList.add("item");
-//     return item
-//   })
-// }
-// console.log(list)
-// list.append(...createLIst(ingredients))
+list.append(...createLIst(ingredients))
 
 
-// const list = document.querySelector("#ingredients")
-// const createLIst = (v) => v.map((i) => {
-//   const item = document.createElement("li");
-//   item.textContent = `${i}`;
-//   item.classList.add("item");
-//   return item
-// })
-// console.log(list)
-// list.append(...createLIst(ingredients))
+
 
 
 

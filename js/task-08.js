@@ -25,7 +25,7 @@ function onFormSubmit(evt) {
     evt.preventDefault();
     const email = evt.target.email.value;
     const password = evt.target.password.value;
-    console.log(email === "" || password === "" ? alert("Заполните все поля!") : { email, password });
+    email === "" || password === "" ? alert("Заполните все поля!") : console.log({ email, password });
     ref.form.reset()
 }
 

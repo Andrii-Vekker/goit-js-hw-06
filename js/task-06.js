@@ -17,17 +17,46 @@ inputRef.addEventListener("blur", offInputFocus);
 
 function offInputFocus(evt) {
     const inputCurrentLength = evt.target.value.length;
-    inputCurrentLength === inputLength ? inputRef.classList.add("valid") : inputRef.classList.add("invalid");
-}
+if (inputCurrentLength === inputLength) {
+    inputRef.classList.add("valid");
+    inputRef.classList.remove("invalid");
+    }
+   else if (inputRef.classList.contains("valid")) {
+        inputRef.classList.add("invalid");
+        inputRef.classList.remove("valid");
+   }
+};
 
-/////////////////////////////////////////////////////////
+
+// function offInputFocus(evt) {
+//     const str = evt.target.value;
+//     console.log(str)
+//    const strFix = str.replace(/ +/g, ' ').trim();
+//     console.dir(strFix)
+//     const inputCurrentLength = strFix.length;
+//     console.log(inputCurrentLength)
+// if (inputCurrentLength === inputLength) {
+//     inputRef.classList.add("valid");
+//     inputRef.classList.remove("invalid");
+//     }
+//    else if (inputRef.classList.contains("valid")) {
+//         inputRef.classList.add("invalid");
+//         inputRef.classList.remove("valid");
+//    }
+// };
+
+
 // const input = document.querySelector('input');
 
-// input.addEventListener("click", () => {
-//     input.focus();
-// })
-
-// input.addEventListener("blur", () => {
-// input.value.length === 6 ? input.classList.add('valid') : input.classList.add('invalid')    
+// const toggleClass = (el, addClass, removeClass) => {
+//     el.classList.add(addClass)
+//     el.classList.remove(removeClass);
 // }
-// )
+
+// const validateInput = () => {
+//     const trimStrLength = input.value.trim().length;
+//     const lengthNumber = parseInt(input.getAttribute("data-length"));
+//     trimStrLength === lengthNumber ? toggleClass(input, 'valid', 'invalid') : toggleClass(input, 'invalid', 'valid')
+// }
+
+// input.addEventListener("blur", validateInput);

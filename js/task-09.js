@@ -11,7 +11,6 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 };
 
-
 const ref = {
   bodyColor: document.querySelector("body"),
   changeColorBtn: document.querySelector(".change-color"),
@@ -22,7 +21,7 @@ console.log(ref.bodyColor)
 ref.changeColorBtn.addEventListener("click", changeColor)
 
 function changeColor() {
-  ref.bodyColor.style.backgroundColor = getRandomHexColor();
-  ref.spanText.textContent = getRandomHexColor()
+  let color = ref.bodyColor.style.backgroundColor = getRandomHexColor();
+  ref.spanText.textContent = color
 
 }

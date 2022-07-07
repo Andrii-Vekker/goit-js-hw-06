@@ -16,10 +16,10 @@ const categoriesRef = document.querySelectorAll(".item");
 // console.log(categoriesRef)
 function categories(value) {
     
-const findItem = value.forEach(element =>
+const findItem = value.forEach((element) =>
      console.log(
-    `Категория: ${element.querySelector('h2').textContent(i)};
-     Количество элементов: ${element.querySelectorAll('li').length}`,
+    `Category: ${element.querySelector('h2').textContent};
+     Elements: ${element.querySelectorAll('li').length}`,
   ),
 );
     return findItem;
