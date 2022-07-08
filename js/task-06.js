@@ -15,26 +15,8 @@ const inputLength = parseInt(inputRef.getAttribute("data-length"));
 console.log(inputLength)
 inputRef.addEventListener("blur", offInputFocus);
 
-function offInputFocus(evt) {
-    const inputCurrentLength = evt.target.value.length;
-if (inputCurrentLength === inputLength) {
-    inputRef.classList.add("valid");
-    inputRef.classList.remove("invalid");
-    }
-   else if (inputRef.classList.contains("valid")) {
-        inputRef.classList.add("invalid");
-        inputRef.classList.remove("valid");
-   }
-};
-
-
 // function offInputFocus(evt) {
-//     const str = evt.target.value;
-//     console.log(str)
-//    const strFix = str.replace(/ +/g, ' ').trim();
-//     console.dir(strFix)
-//     const inputCurrentLength = strFix.length;
-//     console.log(inputCurrentLength)
+//     const inputCurrentLength = evt.target.value.length;
 // if (inputCurrentLength === inputLength) {
 //     inputRef.classList.add("valid");
 //     inputRef.classList.remove("invalid");
@@ -44,6 +26,24 @@ if (inputCurrentLength === inputLength) {
 //         inputRef.classList.remove("valid");
 //    }
 // };
+
+
+function offInputFocus(evt) {
+    const str = evt.target.value;
+    console.log(str)
+   const strFix = str.replace(/ +/g, '').trim();
+    console.dir(strFix)
+    const inputCurrentLength = strFix.length;
+    console.log(inputCurrentLength)
+if (inputCurrentLength === inputLength) {
+    inputRef.classList.add("valid");
+    inputRef.classList.remove("invalid");
+    }
+   else if (inputRef.classList.contains("valid")) {
+        inputRef.classList.add("invalid");
+        inputRef.classList.remove("valid");
+   }
+};
 
 
 // const input = document.querySelector('input');
