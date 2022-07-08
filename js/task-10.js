@@ -34,6 +34,35 @@ const ref = {
 ref.btnCreate.addEventListener("click", (e) => createBoxes(+ref.input.value));
 ref.btnDestroy.addEventListener("click", destroyBoxes);
 ref.input.addEventListener("input", (e) => {e.target.value})
+
+const items = []
+
+
+function createBoxes(amount) {
+  for (let i = 0; i < amount; i += 1) {
+    const item = document.createElement("div");
+    item.classList.add("box-item")
+    item.style.background = getRandomHexColor();
+    item.style.width =  `${30 + i * 10}px`;
+    item.style.height = `${30 + i * 10}px`;
+    items.push(item);
+  }
+  
+  return ref.divParent.append(...items)
+};
+
+console.log(createBoxes())
+
+function destroyBoxes() {
+  ref.divParent.innerHTML = "";
+  ref.input.value = "";
+  items.length = 0 ;
+}
+
+
+
+
+
 // function createBoxes(amount) {
 //   for (let i = 0; i < amount; i += 1) {
 //     const item = document.createElement("div");
@@ -51,24 +80,3 @@ ref.input.addEventListener("input", (e) => {e.target.value})
 
 // }
 // console.log(items)
-const items = []
-function createBoxes(amount) {
-  for (let i = 0; i < amount; i += 1) {
-    const item = document.createElement("div");
-    item.classList.add("box-item")
-    item.style.background = getRandomHexColor();
-    item.style.width =  `${30 + i * 10}px`;
-    item.style.height = `${30 + i * 10}px`;
-    items.push(item)
-  }
-  
-  return ref.divParent.append(...items)
-};
-
-console.log(items)
-
-function destroyBoxes() {
-  ref.divParent.innerHTML = "";
-  ref.input.value = ""
-
-}
