@@ -31,10 +31,12 @@ inputRef.addEventListener("blur", offInputFocus);
 function offInputFocus(evt) {
     const str = evt.target.value;
     console.log(str)
+
    const strFix = str.replace(/ +/g, "").trim();
     console.dir(strFix)
     const inputCurrentLength = strFix.length;
     console.log(strFix)
+
     console.log(inputCurrentLength)
 if (inputCurrentLength === inputLength) {
     inputRef.classList.add("valid");
