@@ -18,10 +18,10 @@ function categories(value) {
     
 const findItem = value.forEach((element) =>
      console.log(
-    `Number of categories: ${categoriesRef.length};
-    Category: ${element.querySelector('h2').textContent};
+    `Category: ${element.querySelector('h2').textContent};
     Elements: ${element.querySelectorAll('li').length}`,
   ),
+  console.log(`Number of categories: ${categoriesRef.length}`)
 );
     return findItem;
 }
